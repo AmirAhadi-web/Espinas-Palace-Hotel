@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>هتل اسپیناس پالاس — تهران</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Gilda+Display&family=Marcellus&display=swap" rel="stylesheet">
+
+<!-- YekanBakh Bold — Persian Font -->
+<style>
+  @font-face {
+    font-family: 'YekanBakh';
+    src: url('assets/fonts/YekanBakh-Bold.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  /* Persian text: force YekanBakh regardless of Tailwind's font-weight utilities,
+     since only the Bold cut is available. Latin fallbacks preserve LTR typography. */
+  :lang(fa), [lang="fa"] { font-family: 'YekanBakh', system-ui, sans-serif; }
+</style>
+
+<!-- Tailwind CSS (Play CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg:         '#f5f0e8',
+          'bg-alt':   '#ece5d8',
+          paper:      '#faf7f1',
+          ink:        '#1e1b16',
+          'ink-soft': '#4a443b',
+          'ink-mute': '#8a8378',
+          line:       '#d9d1c1',
+          accent:     '#7a5a2e',
+        },
+        fontFamily: {
+          sans:      ['YekanBakh', 'system-ui', 'sans-serif'],
+          serif:     ['"Cormorant Garamond"', 'YekanBakh', 'serif'],
+          display:   ['"Gilda Display"', '"Marcellus"', 'serif'],
+          marcellus: ['Marcellus', 'serif'],
+        },
+        maxWidth: {
+          shell: '1360px',
+        },
+        keyframes: {
+          heroFade: {
+            '0%, 100%': { opacity: '0', transform: 'scale(1.06)' },
+            '3%': { opacity: '1' },
+            '25%': { opacity: '1', transform: 'scale(1.14)' },
+            '30%': { opacity: '0' },
+          },
+          cue: {
+            '0%, 100%': { transform: 'scaleY(.3)', opacity: '.4' },
+            '50%': { transform: 'scaleY(1)', opacity: '1' },
+          }
+        },
+        animation: {
+          heroFade: 'heroFade 22s infinite',
+          cue: 'cue 2.2s ease-in-out infinite',
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-bg text-ink font-sans font-light text-[16px] leading-[1.7] antialiased [text-rendering:optimizeLegibility] m-0 p-0">
+
+<!-- Nav -->
+<nav class="fixed top-0 left-0 right-0 z-40 px-[22px] py-[18px] min-[900px]:px-[48px] min-[900px]:py-[22px] flex items-center justify-between bg-transparent text-white transition-all duration-[350ms] border-b border-transparent">
+  <a href="#" class="font-serif text-[22px] tracking-[.28em] uppercase text-inherit no-underline">Espinas Palace</a>
+  <div class="hidden min-[900px]:flex gap-[34px] items-center text-[13px] font-normal">
+    <a href="#about" class="opacity-85 transition-opacity duration-200 hover:opacity-100 text-inherit no-underline">درباره</a>
+    <a href="#rooms" class="opacity-85 transition-opacity duration-200 hover:opacity-100 text-inherit no-underline">اقامتگاه‌ها</a>
+    <a href="#spa" class="opacity-85 transition-opacity duration-200 hover:opacity-100 text-inherit no-underline">اسپا</a>
+    <a href="#events" class="opacity-85 transition-opacity duration-200 hover:opacity-100 text-inherit no-underline">تشریفات</a>
+    <a href="#gallery" class="opacity-85 transition-opacity duration-200 hover:opacity-100 text-inherit no-underline">گالری</a>
+    <a href="#location" class="opacity-85 transition-opacity duration-200 hover:opacity-100 text-inherit no-underline">تماس</a>
+  </div>
+  <a href="#booking" class="inline-block py-[10px] px-[22px] border border-current text-[12px] tracking-[.18em] transition-colors duration-250 hover:bg-white hover:text-[#1e1b16] text-inherit no-underline"><span>رزرو اقامت</span></a>
+</nav>
+
+<!-- Hero -->
+<header class="relative h-screen min-h-[640px] text-white overflow-hidden" id="booking">
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 z-[1] pointer-events-none [background:linear-gradient(to_bottom,rgba(0,0,0,.45)_0%,rgba(0,0,0,.12)_32%,rgba(0,0,0,.15)_55%,rgba(0,0,0,.72)_100%)]"></div>
+  
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-0 animate-heroFade will-change-[opacity,transform] [animation-delay:0s]" style="background-image:url('assets/hero-1-facade.webp')"></div>
+    <div class="absolute inset-0 bg-cover bg-center opacity-0 animate-heroFade will-change-[opacity,transform] [animation-delay:5.5s]" style="background-image:url('assets/hero-2-lobby.jpg')"></div>
+    <div class="absolute inset-0 bg-cover bg-center opacity-0 animate-heroFade will-change-[opacity,transform] [animation-delay:11s]" style="background-image:url('assets/hero-3-suite.jpg')"></div>
+    <div class="absolute inset-0 bg-cover bg-center opacity-0 animate-heroFade will-change-[opacity,transform] [animation-delay:16.5s]" style="background-image:url('assets/hero-4-spa.jpg')"></div>
+  </div>
+
+  <div class="relative z-10 h-full flex flex-col justify-end px-[22px] pb-[44px] min-[720px]:px-[48px] min-[720px]:pb-[72px] max-w-shell mx-auto">
+    <span class="block [direction:ltr] font-display font-normal text-[clamp(14px,1.2vw,18px)] tracking-[.5em] text-white/72 uppercase mb-[24px]">Espinas Palace · Tehran</span>
+    <div class="text-[12px] tracking-[.3em] text-white/75 mb-[22px] font-normal">تهران — پایتخت مهمان‌نوازی</div>
+    <h1 class="font-sans font-extralight tracking-[-.005em] max-w-[16ch] text-white text-[clamp(48px,6.4vw,92px)] leading-[1.08] m-0">هتل اسپیناس پالاس<br/>تجربه‌ ای فراتر از اقامت</h1>
+    <p class="mt-[26px] max-w-[46ch] text-[17px] leading-[1.8] text-white/82 font-light m-0">در قلب پایتخت، جایی که معماری معاصر با ظرافت ایرانی درهم می‌آمیزد؛ آرامش، شکوه و میزبانی به سبک اسپیناس در انتظار شماست.</p>
+
+    <div class="mt-[44px] flex flex-wrap min-[720px]:flex-nowrap items-stretch border border-white/30 bg-[#14120e]/35 backdrop-blur-[10px] max-w-[720px]" role="group" aria-label="بررسی موجودی">
+      <div class="flex-1 min-w-[50%] min-[720px]:min-w-0 p-[18px_24px] border-l-0 min-[720px]:border-l min-[720px]:border-white/20 flex flex-col gap-[4px]">
+        <span class="font-serif text-[10px] tracking-[.22em] uppercase text-white/60 [direction:ltr]">Arrival</span>
+        <span class="text-[14px] text-white font-normal">۱۸ مهر ۱۴۰۵</span>
+      </div>
+      <div class="flex-1 min-w-[50%] min-[720px]:min-w-0 p-[18px_24px] border-l-0 min-[720px]:border-l min-[720px]:border-white/20 flex flex-col gap-[4px]">
+        <span class="font-serif text-[10px] tracking-[.22em] uppercase text-white/60 [direction:ltr]">Departure</span>
+        <span class="text-[14px] text-white font-normal">۲۱ مهر ۱۴۰۵</span>
+      </div>
+      <div class="flex-1 min-w-[50%] min-[720px]:min-w-0 p-[18px_24px] border-l-0 min-[720px]:border-l min-[720px]:border-white/20 flex flex-col gap-[4px]">
+        <span class="font-serif text-[10px] tracking-[.22em] uppercase text-white/60 [direction:ltr]">Guests</span>
+        <span class="text-[14px] text-white font-normal">۲ بزرگسال</span>
+      </div>
+      <button class="w-full min-[720px]:w-auto p-[18px] min-[720px]:px-[32px] bg-white text-[#111] border-none font-inherit text-[13px] tracking-[.18em] cursor-pointer transition-colors duration-200 hover:bg-[#7a5a2e] hover:text-white">بررسی موجودی</button>
+    </div>
+  </div>
+
+  <div class="absolute left-[22px] bottom-[74px] min-[720px]:left-[48px] min-[720px]:bottom-[88px] z-10 text-white/75 font-marcellus text-[11px] tracking-[.35em] uppercase [direction:ltr]">Palace Facade · Blue Hour</div>
+  
+  <div class="absolute left-[22px] bottom-[20px] min-[720px]:left-[48px] min-[720px]:bottom-[32px] z-10 flex gap-[8px] [direction:ltr]">
+    <button aria-label="previous" class="w-[40px] h-[40px] min-[720px]:w-[46px] min-[720px]:h-[46px] border border-white/35 bg-transparent text-white font-marcellus text-[18px] inline-flex items-center justify-center cursor-pointer transition-all duration-250 hover:bg-white/15 hover:border-white">‹</button>
+    <button aria-label="next" class="w-[40px] h-[40px] min-[720px]:w-[46px] min-[720px]:h-[46px] border border-white/35 bg-transparent text-white font-marcellus text-[18px] inline-flex items-center justify-center cursor-pointer transition-all duration-250 hover:bg-white/15 hover:border-white">›</button>
+  </div>
+  
+  <div class="absolute right-[22px] bottom-[22px] min-[720px]:right-[48px] min-[720px]:bottom-[34px] z-10 flex gap-[10px] [direction:ltr]" role="tablist">
+    <span class="w-[32px] h-[2px] bg-white/30 block [&.on]:bg-white/95 on"></span>
+    <span class="w-[32px] h-[2px] bg-white/30 block [&.on]:bg-white/95"></span>
+    <span class="w-[32px] h-[2px] bg-white/30 block [&.on]:bg-white/95"></span>
+    <span class="w-[32px] h-[2px] bg-white/30 block [&.on]:bg-white/95"></span>
+  </div>
+
+  <div class="absolute bottom-[28px] left-1/2 -translate-x-1/2 z-10 text-[10px] tracking-[.3em] text-white/70 flex flex-col items-center before:content-[''] before:block before:w-[1px] before:h-[42px] before:bg-white/50 before:mx-auto before:mb-[12px] before:origin-top before:animate-cue">SCROLL</div>
+</header>
+
+<!-- About / Overview -->
+<section id="about" class="py-[80px] min-[900px]:py-[120px] relative">
+  <div class="max-w-shell mx-auto px-[22px] min-[720px]:px-12">
+    <div class="grid grid-cols-1 min-[900px]:grid-cols-[1fr_2fr] gap-[24px] min-[900px]:gap-[80px] mb-[48px] min-[900px]:mb-[72px] items-end">
+      <div>
+        <div class="font-marcellus text-[11px] tracking-[.38em] uppercase text-[#8a8378] font-normal [direction:ltr]">01 — About</div>
+        <h2 class="mt-[16px] font-sans font-extralight tracking-[-.005em] text-[clamp(34px,4vw,60px)] leading-[1.08] m-0">میزبانی به سبک اسپیناس،<br/>در پایتخت.</h2>
+      </div>
+      <p class="max-w-[52ch] text-[#4a443b] text-[17px] leading-[1.9] m-0">
+        هتل اسپیناس پالاس تهران با معماری الهام‌گرفته از ظرافت‌های ایرانی و استانداردهای بین‌المللی مهمان‌نوازی، مقصدی برای مسافران با ذوق و میهمانان تجاری در قلب تهران است. از لحظهٔ ورود تا بدرود، جزئیات، حضور دارند.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 min-[900px]:grid-cols-[1.2fr_1fr] gap-[48px] min-[900px]:gap-[80px] items-start">
+      <div class="space-y-[20px]">
+        <p class="text-[#4a443b] text-[16px] leading-[1.95] m-0">در اسپیناس پالاس، تجربهٔ اقامت از یک شب استراحت فراتر می‌رود. اتاق‌ها و سوئیت‌های ما، رستوران‌های چندملیتی، اسپای پنج‌ستاره و فضاهای رویدادی، همگی با نگاهی به مهمان‌نوازی اصیل ایرانی و ظرافت طراحی معاصر شکل گرفته‌اند.</p>
+        <p class="text-[#4a443b] text-[16px] leading-[1.95] m-0">ما بر این باوریم که لوکس بودن، در سکوت طراحی و در حضور خدمت‌گزارانی که پیش از درخواست، پاسخ می‌دهند، معنا می‌یابد. هر گوشه از هتل، از لابی مرمرین تا تراس‌های رو به شهر، برای همان لحظه‌های به‌یادماندنی طراحی شده است.</p>
+        <p class="text-[#4a443b] text-[16px] leading-[1.95] m-0">موقعیت راهبردی هتل در منطقهٔ سعادت‌آباد، دسترسی آسان به مراکز تجاری، فرهنگی و تفریحی پایتخت را برای میهمانان فراهم می‌کند.</p>
+
+        <div class="mt-[40px] font-serif italic text-[22px] text-ink">
+          «مهمان‌نوازی، هنر دیده‌نشدن و در دسترس بودن است.»
+          <span class="block font-sans not-italic text-[12px] tracking-[.18em] text-[#8a8378] mt-[8px]">— مدیریت هتل اسپیناس پالاس</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 grid-rows-[220px_220px] min-[900px]:grid-rows-[220px_180px] gap-[14px]">
+        <div class="w-full h-full bg-cover bg-center bg-no-repeat row-span-2" style="background-image:url('assets/gallery-corridor.jpg')"></div>
+        <div class="w-full h-full bg-cover bg-center bg-no-repeat" style="background-image:url('assets/gallery-detail2.jpeg')"></div>
+        <div class="w-full h-full bg-cover bg-center bg-no-repeat" style="background-image:url('assets/gallery-rooftop.jpg')"></div>
+      </div>
+    </div>
+
+    <div class="mt-[88px] border-y border-line grid grid-cols-2 min-[900px]:grid-cols-4">
+      <div class="p-[40px_32px] text-right border-b border-line min-[900px]:border-b-0 min-[900px]:border-l min-[900px]:first:border-l-0"><div class="font-serif text-[56px] font-light leading-none text-ink">۱۸۵</div><div class="mt-[12px] text-[13px] text-[#8a8378]">اتاق و سوئیت</div></div>
+      <div class="p-[40px_32px] text-right border-b border-l border-line min-[900px]:border-b-0"><div class="font-serif text-[56px] font-light leading-none text-ink">۴</div><div class="mt-[12px] text-[13px] text-[#8a8378]">رستوران و کافه</div></div>
+      <div class="p-[40px_32px] text-right border-line min-[900px]:border-l"><div class="font-serif text-[56px] font-light leading-none text-ink">۲٬۴۰۰</div><div class="mt-[12px] text-[13px] text-[#8a8378]">متر مربع اسپا</div></div>
+      <div class="p-[40px_32px] text-right border-l border-line"><div class="font-serif text-[56px] font-light leading-none text-ink">۱۲</div><div class="mt-[12px] text-[13px] text-[#8a8378]">سالن رویداد</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Rooms -->
+<section id="rooms" class="bg-[#ece5d8] py-[80px] min-[900px]:py-[120px] relative">
+  <div class="max-w-shell mx-auto px-[22px] min-[720px]:px-12">
+    <div class="grid grid-cols-1 min-[900px]:grid-cols-[1fr_2fr] gap-[24px] min-[900px]:gap-[80px] mb-[48px] min-[900px]:mb-[72px] items-end">
+      <div>
+        <div class="font-marcellus text-[11px] tracking-[.38em] uppercase text-[#8a8378] font-normal [direction:ltr]">02 — Rooms &amp; Suites</div>
+        <h2 class="mt-[16px] font-sans font-extralight tracking-[-.005em] text-[clamp(34px,4vw,60px)] leading-[1.08] m-0">اقامتگاه‌ها</h2>
+      </div>
+      <p class="max-w-[52ch] text-[#4a443b] text-[17px] leading-[1.9] m-0">
+        از اتاق‌های کلاسیک با منظر شهر تا سوئیت سلطنتی رو به کوه‌های البرز؛ هر فضا با پارچه‌های دست‌بافت ایرانی، پرده‌های سنگین و نور طبیعی طراحی شده تا خانه‌ای دوم در پایتخت باشد.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 min-[900px]:grid-cols-2 gap-[56px] min-[900px]:gap-[72px_56px]">
+      <article class="room">
+        <div class="w-full bg-cover bg-center bg-no-repeat aspect-[4/3]" style="background-image:url('assets/room-1-deluxe.jpg')"></div>
+        <div class="flex items-baseline justify-between mt-[24px] gap-[16px]"><h3 class="font-light tracking-[-.015em] text-[26px] leading-[1.25] m-0">اتاق دلوکس شهر</h3><span class="font-serif text-[14px] text-[#8a8378] tracking-[.2em]">۰۱</span></div>
+        <div class="mt-[10px] flex gap-[24px] text-[13px] text-[#8a8378] pb-[16px] border-b border-line"><span>۴۲ متر مربع</span><span>تخت کینگ</span><span>منظر شهر</span></div>
+        <p class="mt-[18px] text-[#4a443b] text-[15px] leading-[1.85] max-w-[44ch] m-0">اتاقی روشن و خلوت با پارچه‌های خنثی، حمام مرمرین و پنجره‌های تمام‌قد رو به تهران؛ برای اقامت‌های کوتاه شغلی یا تعطیلی آخر هفته.</p>
+        <div class="mt-[22px] flex items-baseline justify-between">
+          <div>
+            <span class="text-[11px] text-[#8a8378] tracking-[.18em] block mb-[4px]">شروع از</span>
+            <span class="font-serif text-[24px] text-ink"><small class="font-sans text-[12px] text-[#8a8378] mr-[4px]">تومان</small>۱۸٬۵۰۰٬۰۰۰ / شب</span>
+          </div>
+          <a class="text-[12px] tracking-[.22em] text-ink border-b border-ink pb-[3px] transition-colors duration-200 hover:text-accent hover:border-accent no-underline" href="#">مشاهده اتاق</a>
+        </div>
+      </article>
+
+      <article class="room">
+        <div class="w-full bg-cover bg-center bg-no-repeat aspect-[4/3]" style="background-image:url('assets/room-2-executive.jpg')"></div>
+        <div class="flex items-baseline justify-between mt-[24px] gap-[16px]"><h3 class="font-light tracking-[-.015em] text-[26px] leading-[1.25] m-0">سوئیت اجرایی</h3><span class="font-serif text-[14px] text-[#8a8378] tracking-[.2em]">۰۲</span></div>
+        <div class="mt-[10px] flex gap-[24px] text-[13px] text-[#8a8378] pb-[16px] border-b border-line"><span>۶۸ متر مربع</span><span>نشیمن جدا</span><span>لانژ اختصاصی</span></div>
+        <p class="mt-[18px] text-[#4a443b] text-[15px] leading-[1.85] max-w-[44ch] m-0">فضایی برای کار و آرامش؛ نشیمن مجزا، میز کار طولانی و دسترسی به لانژ اجرایی طبقهٔ بیست‌ودوم با پذیرایی مداوم.</p>
+        <div class="mt-[22px] flex items-baseline justify-between">
+          <div>
+            <span class="text-[11px] text-[#8a8378] tracking-[.18em] block mb-[4px]">شروع از</span>
+            <span class="font-serif text-[24px] text-ink"><small class="font-sans text-[12px] text-[#8a8378] mr-[4px]">تومان</small>۲۹٬۰۰۰٬۰۰۰ / شب</span>
+          </div>
+          <a class="text-[12px] tracking-[.22em] text-ink border-b border-ink pb-[3px] transition-colors duration-200 hover:text-accent hover:border-accent no-underline" href="#">مشاهده اتاق</a>
+        </div>
+      </article>
+
+      <article class="room">
+        <div class="w-full bg-cover bg-center bg-no-repeat aspect-[4/3]" style="background-image:url('assets/room-3-palace.jpg')"></div>
+        <div class="flex items-baseline justify-between mt-[24px] gap-[16px]"><h3 class="font-light tracking-[-.015em] text-[26px] leading-[1.25] m-0">سوئیت پالاس</h3><span class="font-serif text-[14px] text-[#8a8378] tracking-[.2em]">۰۳</span></div>
+        <div class="mt-[10px] flex gap-[24px] text-[13px] text-[#8a8378] pb-[16px] border-b border-line"><span>۱۱۰ متر مربع</span><span>دو اتاق خواب</span><span>تراس خصوصی</span></div>
+        <p class="mt-[18px] text-[#4a443b] text-[15px] leading-[1.85] max-w-[44ch] m-0">اقامتگاهی برای خانواده و میهمانی‌های خصوصی؛ آشپزخانهٔ کوچک، اتاق ناهارخوری و تراس رو به کوه‌های البرز.</p>
+        <div class="mt-[22px] flex items-baseline justify-between">
+          <div>
+            <span class="text-[11px] text-[#8a8378] tracking-[.18em] block mb-[4px]">شروع از</span>
+            <span class="font-serif text-[24px] text-ink"><small class="font-sans text-[12px] text-[#8a8378] mr-[4px]">تومان</small>۴۸٬۰۰۰٬۰۰۰ / شب</span>
+          </div>
+          <a class="text-[12px] tracking-[.22em] text-ink border-b border-ink pb-[3px] transition-colors duration-200 hover:text-accent hover:border-accent no-underline" href="#">مشاهده اتاق</a>
+        </div>
+      </article>
+
+      <article class="room">
+        <div class="w-full bg-cover bg-center bg-no-repeat aspect-[4/3]" style="background-image:url('assets/room-4-royal.jpeg')"></div>
+        <div class="flex items-baseline justify-between mt-[24px] gap-[16px]"><h3 class="font-light tracking-[-.015em] text-[26px] leading-[1.25] m-0">سوئیت سلطنتی</h3><span class="font-serif text-[14px] text-[#8a8378] tracking-[.2em]">۰۴</span></div>
+        <div class="mt-[10px] flex gap-[24px] text-[13px] text-[#8a8378] pb-[16px] border-b border-line"><span>۲۲۰ متر مربع</span><span>سه اتاق خواب</span><span>خدمتکار اختصاصی</span></div>
+        <p class="mt-[18px] text-[#4a443b] text-[15px] leading-[1.85] max-w-[44ch] m-0">بلندترین اقامتگاه هتل، در طبقهٔ بیست‌وپنجم؛ کتابخانه، اتاق مطالعه، سالن پذیرایی رسمی و خدمت میهمان‌داری اختصاصی در تمام ساعات شبانه‌روز.</p>
+        <div class="mt-[22px] flex items-baseline justify-between">
+          <div>
+            <span class="text-[11px] text-[#8a8378] tracking-[.18em] block mb-[4px]">شروع از</span>
+            <span class="font-serif text-[24px] text-ink"><small class="font-sans text-[12px] text-[#8a8378] mr-[4px]">تومان</small>۱۲۰٬۰۰۰٬۰۰۰ / شب</span>
+          </div>
+          <a class="text-[12px] tracking-[.22em] text-ink border-b border-ink pb-[3px] transition-colors duration-200 hover:text-accent hover:border-accent no-underline" href="#">مشاهده اتاق</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Spa Feature -->
+<section id="spa" class="relative py-0">
+  <div class="grid grid-cols-1 min-[900px]:grid-cols-2 gap-0 items-stretch">
+    <div class="w-full h-full">
+      <div class="w-full h-full bg-cover bg-center bg-no-repeat min-h-[340px] min-[900px]:min-h-[560px]" style="background-image:url('assets/spa-feature.webp')"></div>
+    </div>
+    <div class="p-[56px_22px] min-[900px]:p-[80px_72px] flex flex-col justify-center bg-[#faf7f1]">
+      <div class="font-marcellus text-[11px] tracking-[.38em] uppercase text-[#8a8378] font-normal [direction:ltr]">03 — Spa &amp; Wellness</div>
+      <h2 class="m-[14px_0_24px] max-w-[14ch] font-sans font-extralight tracking-[-.005em] text-[clamp(34px,4vw,60px)] leading-[1.08]">سکوت،<br/>در دو هزار متر مربع.</h2>
+      <p class="text-[#4a443b] text-[16px] leading-[1.9] max-w-[44ch] m-0">اسپای اسپیناس، پناهگاهی زیرزمینی از سنگ و آب است. حمام سنتی ایرانی، سونای خشک و بخار، استخر شنای المپیک و اتاق‌های ماساژ اختصاصی — همه‌جا با نور ملایم و رایحه‌های طبیعی. برنامه‌های چندروزهٔ سلامت با نظر پزشک و متخصص تغذیه در دسترس میهمانان است.</p>
+      <a href="#" class="mt-[40px] inline-block py-[14px] px-[30px] text-[12px] tracking-[.22em] border border-[#1e1b16] text-[#1e1b16] bg-transparent transition-colors duration-250 self-start hover:bg-[#1e1b16] hover:text-[#f5f0e8] no-underline">کشف اسپا</a>
+    </div>
+  </div>
+</section>
+
+<!-- Events & Weddings -->
+<section id="events" class="py-[80px] min-[900px]:py-[120px] relative">
+  <div class="max-w-shell mx-auto px-[22px] min-[720px]:px-12">
+    <div class="grid grid-cols-1 min-[900px]:grid-cols-[1fr_2fr] gap-[24px] min-[900px]:gap-[80px] mb-[48px] min-[900px]:mb-[72px] items-end">
+      <div>
+        <div class="font-marcellus text-[11px] tracking-[.38em] uppercase text-[#8a8378] font-normal [direction:ltr]">04 — Occasions</div>
+        <h2 class="mt-[16px] font-sans font-extralight tracking-[-.005em] text-[clamp(34px,4vw,60px)] leading-[1.08] m-0">تشریفات و رویدادها</h2>
+      </div>
+      <p class="max-w-[52ch] text-[#4a443b] text-[17px] leading-[1.9] m-0">
+        از میهمانی‌های خصوصی خانوادگی تا کنفرانس‌های بین‌المللی و مراسم عروسی چند صد نفره؛ سالن‌های چندمنظورهٔ اسپیناس با هنر تشریفات و دقت اجرایی، لحظه‌های شما را ماندگار می‌کند.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 min-[900px]:grid-cols-2 gap-[44px] min-[900px]:gap-[56px]">
+      <div>
+        <div class="w-full bg-cover bg-center bg-no-repeat aspect-[3/2]" style="background-image:url('assets/events-wedding.jpg')"></div>
+        <h3 class="m-[24px_0_12px] font-light tracking-[-.015em] text-[clamp(20px,1.6vw,26px)] leading-[1.25]">عروسی و مراسم خصوصی</h3>
+        <p class="text-[#4a443b] text-[15px] leading-[1.9] max-w-[42ch] m-0">سالن مرمر با ارتفاع ده متر، ظرفیت تا ۶۰۰ میهمان، دسترسی جداگانه و تیم تشریفات مستقل — طراحی مراسم به سبک دلخواه شما.</p>
+        <a href="#" class="mt-[22px] inline-block text-[12px] tracking-[.22em] text-ink border-b border-line pb-[4px] hover:border-ink transition-colors no-underline">درخواست مشاوره</a>
+      </div>
+      <div>
+        <div class="w-full bg-cover bg-center bg-no-repeat aspect-[3/2]" style="background-image:url('assets/events-conference.jpg')"></div>
+        <h3 class="m-[24px_0_12px] font-light tracking-[-.015em] text-[clamp(20px,1.6vw,26px)] leading-[1.25]">رویدادها و نشست‌های تجاری</h3>
+        <p class="text-[#4a443b] text-[15px] leading-[1.9] max-w-[42ch] m-0">دوازده سالن مجهز به فناوری روز، اتاق پرس، اتاق ترجمهٔ همزمان و پذیرایی اختصاصی برای رویدادهای شرکتی و دیپلماتیک.</p>
+        <a href="#" class="mt-[22px] inline-block text-[12px] tracking-[.22em] text-ink border-b border-line pb-[4px] hover:border-ink transition-colors no-underline">دریافت بروشور</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" class="bg-[#faf7f1] py-[80px] min-[900px]:py-[120px] relative">
+  <div class="max-w-shell mx-auto px-[22px] min-[720px]:px-12">
+    <div class="grid grid-cols-1 min-[900px]:grid-cols-[1fr_2fr] gap-[24px] min-[900px]:gap-[80px] mb-[48px] min-[900px]:mb-[72px] items-end">
+      <div>
+        <div class="font-marcellus text-[11px] tracking-[.38em] uppercase text-[#8a8378] font-normal [direction:ltr]">05 — Gallery</div>
+        <h2 class="mt-[16px] font-sans font-extralight tracking-[-.005em] text-[clamp(34px,4vw,60px)] leading-[1.08] m-0">نگاهی به اسپیناس</h2>
+      </div>
+      <p class="max-w-[52ch] text-[#4a443b] text-[17px] leading-[1.9] m-0">نمایی از فضاها، جزئیات و لحظه‌های زندگی در هتل — به روایت تصویر.</p>
+    </div>
+
+    <div class="grid grid-cols-2 min-[900px]:grid-cols-6 auto-rows-[160px] min-[900px]:auto-rows-[140px] gap-[14px]">
+      <div class="w-full h-full bg-cover bg-center bg-no-repeat col-span-1 min-[900px]:col-span-3 row-span-2 min-[900px]:row-span-3" style="background-image:url('assets/hero-2-lobby.jpg')"></div>
+      <div class="w-full h-full bg-cover bg-center bg-no-repeat col-span-1 min-[900px]:col-span-3 row-span-2" style="background-image:url('assets/gallery-restaurant.jpg')"></div>
+      <div class="w-full h-full bg-cover bg-center bg-no-repeat col-span-1 min-[900px]:col-span-2 row-span-2" style="background-image:url('assets/room-3-palace.jpg')"></div>
+      <div class="w-full h-full bg-cover bg-center bg-no-repeat col-span-1 min-[900px]:col-span-2 row-span-2" style="background-image:url('assets/gallery-rooftop2.jpeg')"></div>
+      <div class="w-full h-full bg-cover bg-center bg-no-repeat col-span-1 min-[900px]:col-span-2 row-span-2" style="background-image:url('assets\hero-4-spa.jpg')"></div>
+      <div class="w-full h-full bg-cover bg-center bg-no-repeat col-span-1 min-[900px]:col-span-3 row-span-2" style="background-image:url('assets/gallery-detail.jpeg')"></div> 
+      <div class="w-full h-full bg-cover bg-center bg-no-repeat col-span-1 min-[900px]:col-span-3 row-span-2" style="background-image:url('assets/hero-1-facade1.jpeg')"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Awards -->
+<section id="awards" class="py-[80px] min-[900px]:py-[120px] relative">
+  <div class="max-w-shell mx-auto px-[22px] min-[720px]:px-12">
+    <div class="grid grid-cols-1 min-[900px]:grid-cols-[1fr_2fr] gap-[24px] min-[900px]:gap-[80px] mb-[48px] min-[900px]:mb-[72px] items-end">
+      <div>
+        <div class="font-marcellus text-[11px] tracking-[.38em] uppercase text-[#8a8378] font-normal [direction:ltr]">06 — Recognition</div>
+        <h2 class="mt-[16px] font-sans font-extralight tracking-[-.005em] text-[clamp(34px,4vw,60px)] leading-[1.08] m-0">جوایز و بازتاب رسانه‌ها</h2>
+      </div>
+      <p class="max-w-[52ch] text-[#4a443b] text-[17px] leading-[1.9] m-0">اسپیناس پالاس، به‌طور مداوم مورد توجه مجامع بین‌المللی صنعت گردشگری و رسانه‌های تخصصی سفر بوده است.</p>
+    </div>
+
+    <div class="grid grid-cols-1 min-[900px]:grid-cols-2 gap-[56px] min-[900px]:gap-[96px] items-center">
+      <div class="grid grid-cols-3 gap-[32px_24px]">
+        <div class="border border-line p-[26px_18px] text-center min-h-[120px] flex flex-col justify-center items-center gap-[8px]">
+          <span class="font-serif italic text-[22px] text-ink leading-none">Forbes</span><span class="text-[12px] text-[#4a443b]">Travel Guide</span><span class="text-[11px] text-[#8a8378] tracking-[.22em]">۲۰۲۵</span>
+        </div>
+        <div class="border border-line p-[26px_18px] text-center min-h-[120px] flex flex-col justify-center items-center gap-[8px]">
+          <span class="font-serif italic text-[22px] text-ink leading-none">World Luxury</span><span class="text-[12px] text-[#4a443b]">Hotel Awards</span><span class="text-[11px] text-[#8a8378] tracking-[.22em]">۲۰۲۴</span>
+        </div>
+        <div class="border border-line p-[26px_18px] text-center min-h-[120px] flex flex-col justify-center items-center gap-[8px]">
+          <span class="font-serif italic text-[22px] text-ink leading-none">Condé Nast</span><span class="text-[12px] text-[#4a443b]">Reader's Choice</span><span class="text-[11px] text-[#8a8378] tracking-[.22em]">۲۰۲۴</span>
+        </div>
+        <div class="border border-line p-[26px_18px] text-center min-h-[120px] flex flex-col justify-center items-center gap-[8px]">
+          <span class="font-serif italic text-[22px] text-ink leading-none">Traveller</span><span class="text-[12px] text-[#4a443b]">Middle East</span><span class="text-[11px] text-[#8a8378] tracking-[.22em]">۲۰۲۳</span>
+        </div>
+        <div class="border border-line p-[26px_18px] text-center min-h-[120px] flex flex-col justify-center items-center gap-[8px]">
+          <span class="font-serif italic text-[22px] text-ink leading-none">Haute Grandeur</span><span class="text-[12px] text-[#4a443b]">Global Awards</span><span class="text-[11px] text-[#8a8378] tracking-[.22em]">۲۰۲۳</span>
+        </div>
+        <div class="border border-line p-[26px_18px] text-center min-h-[120px] flex flex-col justify-center items-center gap-[8px]">
+          <span class="font-serif italic text-[22px] text-ink leading-none">TripAdvisor</span><span class="text-[12px] text-[#4a443b]">Travellers' Choice</span><span class="text-[11px] text-[#8a8378] tracking-[.22em]">۲۰۲۲</span>
+        </div>
+      </div>
+
+      <div class="border-r-2 border-accent pr-[32px]">
+        <p class="font-serif italic text-[26px] leading-[1.55] text-ink font-light m-0">«اسپیناس پالاس، نه‌فقط یک اقامتگاه، که تعریف تازه‌ای از مهمان‌نوازی معاصر ایرانی است — جایی که سکوت طراحی، بلندترین صدا را دارد.»</p>
+        <div class="mt-[22px] text-[12px] tracking-[.22em] text-[#8a8378] [direction:ltr]">Condé Nast Traveller — 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Location -->
+<section id="location" class="bg-[#ece5d8] py-[80px] min-[900px]:py-[120px] relative">
+  <div class="max-w-shell mx-auto px-[22px] min-[720px]:px-12">
+    <div class="grid grid-cols-1 min-[900px]:grid-cols-[1fr_2fr] gap-[24px] min-[900px]:gap-[80px] mb-[48px] min-[900px]:mb-[56px] items-end">
+      <div>
+        <div class="font-marcellus text-[11px] tracking-[.38em] uppercase text-[#8a8378] font-normal [direction:ltr]">07 — Location</div>
+        <h2 class="mt-[16px] font-sans font-extralight tracking-[-.005em] text-[clamp(34px,4vw,60px)] leading-[1.08] m-0">تهران، سعادت‌آباد</h2>
+      </div>
+      <p class="max-w-[52ch] text-[#4a443b] text-[17px] leading-[1.9] m-0">در قلب منطقهٔ تجاری و فرهنگی شمال تهران، در چند دقیقه‌ای برج میلاد، دریاچهٔ چیتگر و مراکز خرید مطرح پایتخت.</p>
+    </div>
+
+    <div class="grid grid-cols-1 min-[900px]:grid-cols-[1fr_1.4fr] gap-[40px] min-[900px]:gap-[72px] items-stretch">
+      <div>
+        <h2 class="mb-[28px] font-sans font-extralight tracking-[-.005em] text-[clamp(34px,4vw,60px)] leading-[1.08] m-0 hidden min-[900px]:block"></h2>
+        <div class="mt-[32px] border-t border-line">
+          <div class="py-[22px] border-b border-line grid grid-cols-[130px_1fr] gap-[24px] items-baseline">
+            <span class="text-[12px] tracking-[.18em] text-[#8a8378] uppercase font-serif [direction:ltr]">Address</span>
+            <span class="text-ink text-[15px]">تهران، سعادت‌آباد، بلوار شهرداری<small class="block text-[#8a8378] text-[13px] mt-[4px]">خیابان کاج جنوبی — پلاک ۱</small></span>
+          </div>
+          <div class="py-[22px] border-b border-line grid grid-cols-[130px_1fr] gap-[24px] items-baseline">
+            <span class="text-[12px] tracking-[.18em] text-[#8a8378] uppercase font-serif [direction:ltr]">Reservations</span>
+            <span class="text-ink text-[15px]">۰۲۱ - ۲۲ ۰۰۰ ۰۰۰<small class="block text-[#8a8378] text-[13px] mt-[4px]">پاسخگویی ۲۴ ساعته</small></span>
+          </div>
+          <div class="py-[22px] border-b border-line grid grid-cols-[130px_1fr] gap-[24px] items-baseline">
+            <span class="text-[12px] tracking-[.18em] text-[#8a8378] uppercase font-serif [direction:ltr]">Concierge</span>
+            <span class="text-ink text-[15px]">concierge@Espinas Palace.com<small class="block text-[#8a8378] text-[13px] mt-[4px]">خدمات میهمان اختصاصی</small></span>
+          </div>
+          <div class="py-[22px] border-b border-line grid grid-cols-[130px_1fr] gap-[24px] items-baseline">
+            <span class="text-[12px] tracking-[.18em] text-[#8a8378] uppercase font-serif [direction:ltr]">Airport</span>
+            <span class="text-ink text-[15px]">۴۵ دقیقه تا فرودگاه امام خمینی<small class="block text-[#8a8378] text-[13px] mt-[4px]">سرویس لیموزین اختصاصی</small></span>
+          </div>
+          <div class="py-[22px] border-b border-line grid grid-cols-[130px_1fr] gap-[24px] items-baseline">
+            <span class="text-[12px] tracking-[.18em] text-[#8a8378] uppercase font-serif [direction:ltr]">Nearby</span>
+            <span class="text-ink text-[15px]">برج میلاد · دریاچهٔ چیتگر · موزهٔ فرش</span>
+          </div>
+        </div>
+        <a href="#" class="mt-[40px] inline-block py-[14px] px-[30px] text-[12px] tracking-[.22em] border border-[#1e1b16] text-[#1e1b16] bg-transparent transition-colors duration-250 self-start hover:bg-[#1e1b16] hover:text-[#f5f0e8] no-underline">مسیریابی</a>
+      </div>
+
+      <div class="min-h-[320px] min-[900px]:min-h-[480px]">
+        <div class="w-full h-full bg-cover bg-center bg-no-repeat min-h-[320px] min-[900px]:min-h-[480px] grayscale-[.4] brightness-[.85]" style="background-image:url('assets/gallery-corridor2.jpg')"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Strip -->
+<section class="py-[140px] text-center bg-ink text-[#f5f0e8]">
+  <div class="max-w-shell mx-auto px-[22px] min-[720px]:px-12">
+    <div class="font-marcellus text-[11px] tracking-[.38em] uppercase text-[#f5f0e8]/55 font-normal [direction:ltr] mb-[20px]">Reservations</div>
+    <h2 class="font-serif italic font-light text-[#f5f0e8] max-w-[22ch] mx-auto mb-[20px] text-[clamp(36px,4vw,60px)] m-0">اقامت خود را در اسپیناس پالاس آغاز کنید.</h2>
+    <p class="text-[#f5f0e8]/65 max-w-[48ch] mx-auto mb-[40px] text-[16px] leading-[1.9] m-0">برای بررسی موجودی، رزرو تشریفات یا درخواست خدمات اختصاصی، با میز رزرو ما در تماس باشید.</p>
+    <a href="#booking" class="inline-block py-[14px] px-[30px] text-[12px] tracking-[.22em] border border-white text-white bg-transparent transition-colors duration-250 self-start hover:bg-white hover:text-[#111] no-underline">بررسی موجودی و رزرو</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="pt-[88px] pb-[36px] bg-[#ece5d8] border-t border-line">
+  <div class="max-w-shell mx-auto px-[22px] min-[720px]:px-12">
+    <div class="grid grid-cols-1 min-[900px]:grid-cols-[1.5fr_1fr_1fr_1fr] gap-[40px] min-[900px]:gap-[56px]">
+      <div class="max-[900px]:col-span-2">
+        <div class="font-serif text-[28px] tracking-[.28em] uppercase text-ink">Espinas Palace</div>
+        <p class="mt-[20px] text-[#4a443b] text-[14px] leading-[1.85] max-w-[34ch] m-0">هتل پنج‌ستارهٔ اسپیناس پالاس، تهران — عضو مجموعهٔ هتل‌های اسپیناس. مهمان‌نوازی معاصر، الهام‌گرفته از ایران.</p>
+      </div>
+      <div>
+        <h4 class="text-[12px] tracking-[.22em] uppercase text-[#8a8378] font-serif font-normal mb-[20px] m-0">Explore</h4>
+        <a href="#about" class="block text-[#4a443b] text-[14px] leading-[2.1] hover:text-ink transition-colors no-underline">درباره</a>
+        <a href="#rooms" class="block text-[#4a443b] text-[14px] leading-[2.1] hover:text-ink transition-colors no-underline">اقامتگاه‌ها</a>
+        <a href="#spa" class="block text-[#4a443b] text-[14px] leading-[2.1] hover:text-ink transition-colors no-underline">اسپا و سلامت</a>
+        <a href="#events" class="block text-[#4a443b] text-[14px] leading-[2.1] hover:text-ink transition-colors no-underline">تشریفات</a>
+        <a href="#gallery" class="block text-[#4a443b] text-[14px] leading-[2.1] hover:text-ink transition-colors no-underline">گالری</a>
+      </div>
+      <div>
+        <h4 class="text-[12px] tracking-[.22em] uppercase text-[#8a8378] font-serif font-normal mb-[20px] m-0">Guests</h4>
+        <a href="#" class="block text-[#4a443b] text-[14px] leading-[2.1] hover:text-ink transition-colors no-underline">رزرو آنلاین</a>
+        <a href="#" class="block text-[#4a443b] text-[14px] leading-[2.1] hover:text-ink transition-colors no-underline">میهمانان ویژه</a>
+        <a href="#" class="block text-[#4a443b] text-[14px] leading-[2.1] hover:text-ink transition-colors no-underline">هدیه اقامت</a>
+        <a href="#" class="block text-[#4a443b] text-[14px] leading-[2.1] hover:text-ink transition-colors no-underline">پرسش‌های متداول</a>
+      </div>
+      <div>
+        <h4 class="text-[12px] tracking-[.22em] uppercase text-[#8a8378] font-serif font-normal mb-[20px] m-0">Contact</h4>
+        <p class="block text-[#4a443b] text-[14px] leading-[2.1] m-0">۰۲۱ - ۲۲ ۰۰۰ ۰۰۰</p>
+        <p class="block text-[#4a443b] text-[14px] leading-[2.1] m-0">reservation@Espinas Palace.com</p>
+        <p class="block text-[#4a443b] text-[14px] leading-[2.1] m-0">سعادت‌آباد، تهران</p>
+      </div>
+    </div>
+    <div class="mt-[72px] pt-[28px] border-t border-line flex flex-col min-[900px]:flex-row justify-between text-[12px] text-[#8a8378] gap-[12px]">
+      <div>© ۱۴۰۵ اسپیناس پالاس — تمام حقوق محفوظ است.</div>
+      <div>حریم خصوصی · قوانین · نقشه سایت</div>
+    </div>
+  </div>
+</footer>
+<!-- Developer Credit — Creative Footer -->
+<section class="relative overflow-hidden bg-[#1e1b16] text-[#f5f0e8] py-[72px] min-[900px]:py-[96px]">
+  <!-- subtle decorative glow -->
+  <div class="absolute inset-0 pointer-events-none opacity-[0.07]" style="background-image:radial-gradient(circle at 20% 30%,#7a5a2e 0%,transparent 45%),radial-gradient(circle at 80% 70%,#7a5a2e 0%,transparent 40%)"></div>
+  
+  <div class="relative max-w-shell mx-auto px-[22px] min-[720px]:px-12">
+    <div class="flex flex-col min-[800px]:flex-row items-center gap-[40px] min-[800px]:gap-[64px]">
+      
+      <!-- Portrait -->
+      <div class="relative shrink-0">
+        <div class="w-[140px] h-[140px] min-[800px]:w-[160px] min-[800px]:h-[160px] rounded-full overflow-hidden border border-[#7a5a2e]/40 shadow-[0_0_0_8px_rgba(122,90,46,0.12)]">
+          <!-- عکس خودت رو اینجا بذار -->
+          <img src="assets/photo_2026-09-03_00-21-02.jpg" alt="">
+               alt="پرتره دولوپر" 
+               class="w-full h-full object-cover grayscale-[15%] contrast-[1.05]" />
+        </div>
+        <div class="absolute -inset-[6px] rounded-full border border-[#7a5a2e]/25 pointer-events-none"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="flex-1 text-center min-[800px]:text-right">
+        <div class="font-marcellus text-[11px] tracking-[.4em] uppercase text-[#7a5a2e] mb-[12px] [direction:ltr]">Crafted with care</div>
+        <h3 class="font-sans font-extralight text-[clamp(26px,3.2vw,36px)] leading-[1.2] m-0 tracking-[-.01em]">
+          Developed By <span class="font-normal">Amir Mohammad Ahadi</span>
+        </h3>
+        <p class="mt-[14px] text-[#f5f0e8]/65 text-[15px] leading-[1.85] max-w-[48ch] mx-auto min-[800px]:mx-0">
+          Passionate Front-End Developer
+        </p>
+
+        <!-- Contact & Social -->
+        <div class="mt-[32px] flex flex-wrap justify-center min-[800px]:justify-start gap-[18px] items-center">
+          
+          <!-- Phone -->
+          <a href="tel:+989121234567" class="group flex items-center gap-[10px] text-[13px] text-[#f5f0e8]/80 hover:text-white transition-colors no-underline">
+            <span class="w-[36px] h-[36px] rounded-full border border-[#f5f0e8]/20 flex items-center justify-center group-hover:border-[#7a5a2e] group-hover:bg-[#7a5a2e]/15 transition-all">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span class="tracking-wide">09393871582</span>
+          </a>
+
+          <!-- Email -->
+          <a href="/cdn-cgi/l/email-protection#4f2e3d2e3c2761242e39262e21260f2b2a3961263d" class="group flex items-center gap-[10px] text-[13px] text-[#f5f0e8]/80 hover:text-white transition-colors no-underline">
+            <span class="w-[36px] h-[36px] rounded-full border border-[#f5f0e8]/20 flex items-center justify-center group-hover:border-[#7a5a2e] group-hover:bg-[#7a5a2e]/15 transition-all">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            <span class="tracking-wide"><span class="__cf_email__" data-cfemail="dcbdb1b5aebdb4bdb8b5abb9be9cbbb1bdb5b0f2bfb3b1">[email&#160;protected]</span></span>
+          </a>
+
+          <span class="hidden min-[600px]:block w-[1px] h-[22px] bg-[#f5f0e8]/15 mx-[4px]"></span>
+
+          <!-- Social icons -->
+          <div class="flex items-center gap-[12px]">
+            <!-- GitHub -->
+            <a href="https://github.com/AmirAhadi-web" target="_blank" rel="noopener" aria-label="GitHub" class="w-[40px] h-[40px] rounded-full border border-[#f5f0e8]/18 flex items-center justify-center text-[#f5f0e8]/75 hover:text-white hover:border-[#7a5a2e] hover:bg-[#7a5a2e]/20 transition-all duration-250">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.118 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.625-5.475 5.92.43.37.815 1.1.815 2.22 0 1.605-.015 2.896-.015 3.286 0 .32.216.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/amirmohammad-ahadi" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-[40px] h-[40px] rounded-full border border-[#f5f0e8]/18 flex items-center justify-center text-[#f5f0e8]/75 hover:text-white hover:border-[#7a5a2e] hover:bg-[#7a5a2e]/20 transition-all duration-250">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://instagram.com/amirahadi_web" target="_blank" rel="noopener" aria-label="Instagram" class="w-[40px] h-[40px] rounded-full border border-[#f5f0e8]/18 flex items-center justify-center text-[#f5f0e8]/75 hover:text-white hover:border-[#7a5a2e] hover:bg-[#7a5a2e]/20 transition-all duration-250">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925" integrity="sha512-d9sL6GJLXn6fInD1+TVXhTcQOsmxeHfmHAvwGDIxp5TO+uo1fiWW7mHomMj4MLRlCsJDTqXzWLHJFFlPCEIj/A==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>
