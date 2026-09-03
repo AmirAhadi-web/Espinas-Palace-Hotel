@@ -1,7 +1,7 @@
 # Espinas-Palace-Hotel
 **DEMO**
 ![Image](https://github.com/user-attachments/assets/d384c1db-4beb-4d06-8988-529b021d5752)
-- [Demo Project](https://amirahadi-web.github.io/Music-Player/)
+- [Demo Project](https://amirahadi-web.github.io/Espinas-Palace-Hotel/)
 - Developed by AmirMohammad Ahadi
 - Created - 2026-03-09
 - 🤖 Technologies Used - Html , css , Tailwind
