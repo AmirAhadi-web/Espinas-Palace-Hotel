@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@source "../../index.html";
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('../fonts/YekanBakh-Bold.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('../fonts/CormorantGaramond-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('../fonts/CormorantGaramond-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Marcellus';
+  src: url('../fonts/Marcellus-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-charcoal: #171715;
+  --color-obsidian: #111110;
+  --color-ivory: #F4F0E8;
+  --color-alabaster: #FAF8F4;
+  --color-beige: #D9D0C2;
+  --color-limestone: #EAE3D7;
+  --color-gold: #A68A5B;
+  --color-gold-deep: #735A32;
+  --color-gray-warm: #77736C;
+  --color-ink-muted: #56524B;
+
+  --font-sans: 'YekanBakh', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Cormorant Garamond', 'YekanBakh', Georgia, 'Times New Roman', serif;
+  --font-brand: 'YekanBakh', system-ui, sans-serif;
+  --font-marcellus: 'Marcellus', Georgia, 'Times New Roman', serif;
+  --container-shell: 1360px;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    background-color: #111110;
+    color: #171715;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: clip;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid #A68A5B;
+    outline-offset: 3px;
+  }
+
+  summary {
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* Native HTML+CSS mobile navigation target pattern (Zero JavaScript) */
+#mobile-menu {
+  display: none;
+}
+
+#mobile-menu:target {
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
