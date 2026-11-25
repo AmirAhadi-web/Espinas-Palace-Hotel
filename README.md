@@ -1,6 +1,6 @@
 # Espinas-Palace-Hotel
 **DEMO**
-![Image](https://github.com/user-attachments/assets/3da7bcd8-8bc0-4523-b109-dc6e03b7bbdb)
+![Image](https://github.com/user-attachments/assets/929ba064-409b-4a11-b934-7714d08c95f1)
 - [Demo Project](https://amirahadi-web.github.io/Espinas-Palace-Hotel/)
 - Developed by AmirMohammad Ahadi
 - Created - 2026-03-09
